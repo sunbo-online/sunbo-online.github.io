@@ -155,8 +155,8 @@ h2 { margin: 0; font-size: clamp(24px, 2.5vw, 30px); line-height: 1.2; }
 .course-nav a { padding: 7px 0; color: #555a58; font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line); }
 .course-nav a:hover, .course-nav a:focus-visible { color: var(--garnet); }
 .syllabus-section { padding: 58px 0; scroll-margin-top: 20px; border-bottom: 1px solid var(--line); }
-.syllabus-section > h2 { max-width: 760px; margin-bottom: 18px; font-size: clamp(28px, 3.5vw, 40px); }
-.syllabus-section > p:not(.eyebrow):not(.section-note) { max-width: 780px; color: #555a58; font-size: 17px; }
+.syllabus-section > h2 { margin-bottom: 18px; font-size: clamp(28px, 3.5vw, 40px); }
+.syllabus-section > p:not(.eyebrow):not(.section-note) { color: #555a58; font-size: 17px; }
 .outcome-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .outcome-grid article, .resource-cards > * { padding: 23px; background: white; border: 1px solid var(--line); border-radius: 6px; }
 .outcome-grid article > span { color: var(--garnet); font-size: 12px; font-weight: 700; }
@@ -195,7 +195,7 @@ h2 { margin: 0; font-size: clamp(24px, 2.5vw, 30px); line-height: 1.2; }
 .grade-grid small { margin-top: 3px; color: var(--warm-grey); }
 .grade-grid .bonus { color: white; background: var(--garnet); border-color: var(--garnet); }
 .grade-grid .bonus strong, .grade-grid .bonus small { color: white; }
-.callout { margin-top: 20px; padding: 22px 24px; background: transparent; border-left: 4px solid var(--garnet); }
+.callout { margin-top: 20px; background: transparent; border: 0; }
 .callout h3 { margin: 0 0 5px; font: 600 18px var(--serif); }
 .callout p { margin: 0; color: #4e5351; font-size: 14px; }
 .policy-list { border-top: 1px solid var(--line); }
@@ -204,7 +204,7 @@ h2 { margin: 0; font-size: clamp(24px, 2.5vw, 30px); line-height: 1.2; }
 .policy-list summary::-webkit-details-marker { display: none; }
 .policy-list summary::after { position: absolute; right: 5px; content: "+"; color: var(--garnet); font: 500 24px var(--sans); }
 .policy-list details[open] summary::after { content: "−"; }
-.policy-list details p { max-width: 790px; margin: -2px 0 18px; color: #555a58; font-size: 14px; }
+.policy-list details p { margin: -2px 0 18px; color: #555a58; font-size: 14px; }
 .resource-section { border-bottom: 0; }
 .resource-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .resource-cards > * { min-height: 145px; display: flex; flex-direction: column; color: inherit; text-decoration: none; }
@@ -213,11 +213,11 @@ h2 { margin: 0; font-size: clamp(24px, 2.5vw, 30px); line-height: 1.2; }
 .resource-cards a:hover { border-color: var(--garnet); }
 
 /* Simple, information-first course layout */
-.course-page { max-width: 980px; }
+.course-page { max-width: var(--max); }
 .course-hero { padding: 48px 0 34px; display: block; border-bottom: 0; }
 .course-hero h1 { max-width: none; font-size: 30px; line-height: 1.12; }
 .course-hero h1 span { margin-bottom: 5px; font-size: 13px; }
-.course-lede { margin-top: 14px; font-size: 16px; }
+.course-lede { max-width: none; margin-top: 14px; font-size: 16px; }
 .course-actions { margin-top: 12px; }
 .course-actions a { font-size: 14px; font-weight: 600; }
 .course-hero > div > p { margin: 8px 0 0; color: var(--warm-grey); }
@@ -231,10 +231,9 @@ h2 { margin: 0; font-size: clamp(24px, 2.5vw, 30px); line-height: 1.2; }
 .outcome-grid { margin: 20px 0 0; display: block; border-top: 1px solid var(--line); }
 .outcome-grid article { padding: 12px 0; display: grid; grid-template-columns: 36px 110px 1fr; gap: 10px; align-items: baseline; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
 .outcome-grid h3, .outcome-grid p { margin: 0; }
-.course-outcomes { max-width: 800px; margin: 16px 0 0; padding-left: 22px; }
+.course-outcomes { margin: 16px 0 0; padding-left: 22px; }
 .course-outcomes li { margin: 6px 0; color: #555a58; }
 .course-outcomes li::marker { color: var(--charcoal); }
-.course-page #overview > p, .course-page #overview > .course-outcomes { max-width: none; }
 .meeting-grid { display: block; border-top: 1px solid var(--line); }
 .meeting-grid article { display: grid; grid-template-columns: 130px 1fr; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
 .meeting-grid h3 { padding: 16px 0; color: var(--charcoal); background: transparent; font-size: 18px; }
@@ -266,7 +265,7 @@ h2 { margin: 0; font-size: clamp(24px, 2.5vw, 30px); line-height: 1.2; }
 .grade-grid .bonus { color: inherit; background: transparent; border-color: var(--line); }
 .grade-grid .bonus strong { color: var(--garnet); }
 .grade-grid .bonus small { color: var(--warm-grey); }
-.callout { padding: 16px 18px; }
+.callout { padding: 16px 0; }
 .policy-list summary { cursor: default; padding-bottom: 6px; }
 .policy-list summary::after { display: none; }
 .policy-list details p { margin-top: 0; }
